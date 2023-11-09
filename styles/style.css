@@ -108,7 +108,7 @@ ol {
   outline-offset: 2px;
 }
 
-.search-form__label:hover {
+.search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
@@ -130,7 +130,11 @@ ol {
   font-weight: 400;
 }
 
-.search-form__textfield:hover {
+.search-form__textfield::placeholder {
+  color: rgba(255, 255, 255, 0.70);
+}
+
+.search-form__textfield:hover{
   outline: none;
 }
 
@@ -152,11 +156,6 @@ ol {
   width: 19px;
   height: 19px;
   outline: 1px solid #FFF;
-}
-
-.search-form__pseudo-checkbox:hover {
-  cursor: pointer;
-  text-decoration: underline;
 }
 
 input[type=checkbox]:checked + span::after {
@@ -228,11 +227,14 @@ input[type=checkbox]:checked + span::after {
 .content__list {
   position: relative;
   display: flex;
-  gap: 30px;
-  height: 298px;
   flex-direction: column;
   align-items: end;
   overflow: auto;
+  height: 298px;
+}
+
+.content__list-item:not(:last-of-type) {
+  margin-bottom: 30px;
 }
 
 .content__list::-webkit-scrollbar {
